@@ -40,7 +40,7 @@
         <!-- CQ: #22139 -->
         <santuario.version>2.1.7</santuario.version>
         <!-- CQ: #22187 -->
-        <slf4j-api.version>1.7.32</slf4j-api.version>
+        <slf4j-api.version>1.7.36</slf4j-api.version>
         <!-- CQ: #22186 -->
         <commons-codec.version>1.15</commons-codec.version>
 
