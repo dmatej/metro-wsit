@@ -31,7 +31,7 @@
         <authentication-api.version>2.0.0</authentication-api.version>
         <connector-api.version>2.1.0-RC1</connector-api.version>
         <ejb-api.version>4.0.0</ejb-api.version>
-        <transaction-api.version>2.0.1-RC1</transaction-api.version>
+        <transaction-api.version>2.0.1</transaction-api.version>
         <interceptor-api.version>2.1.0</interceptor-api.version>
         <cdi-api.version>4.0.0</cdi-api.version>
         <inject-api.version>2.0.1.MR</inject-api.version>
