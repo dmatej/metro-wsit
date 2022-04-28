@@ -47,7 +47,7 @@
         <!-- CQ: #18393 -->
         <stax-utils.version>20070216</stax-utils.version>
 
-        <hk2.version>3.0.2</hk2.version>
+        <hk2.version>3.0.3</hk2.version>
         <grizzly.version>3.0.1</grizzly.version>
         <tomcat.coyote.version>10.1.0-M10</tomcat.coyote.version>
 
