@@ -1,0 +1,48 @@
+#
+# Copyright (c) 2026 Contributors to the Eclipse Foundation
+# Copyright (c) 2022, 2024 Oracle and/or its affiliates. All rights reserved.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Distribution License v. 1.0, which is available at
+# http://www.eclipse.org/org/documents/edl-v10.php.
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
+name: Metro WSIT Dependency Check
+
+on:
+  schedule:
+    - cron: '35 21 * * 2'
+
+jobs:
+  build:
+    name: Test on JDK ${{ matrix.java_version }}
+    runs-on: ubuntu-latest
+    outputs:
+      jdk: ${{ steps.build.outputs.jdk }}
+    strategy:
+      matrix:
+        java_version: [ 21 ]
+
+    steps:
+      - name: Checkout for build
+        uses: actions/checkout@v6
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.java_version }}
+          cache: maven
+      - name: Cache OWASP Dependency-Check Data
+        uses: actions/cache@v5
+        with:
+          path: ~/.m2/repository/org/owasp/dependency-check-data/
+          key: ${{ runner.os }}-dc-nvd-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-dc-nvd-
+      - name: Verify
+        id: build
+        run: |
+          cd jaxws-ri
+          mvn -B -V -Poss-release,dependency-check,snapshots clean verify -Dgpg.skip=true -DskipSBOM
