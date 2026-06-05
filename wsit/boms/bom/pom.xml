@@ -26,7 +26,7 @@
     <artifactId>metro-bom</artifactId>
     <packaging>pom</packaging>
     <name>Metro Web Services Stack Dependency POM</name>
-    <version>4.0.7-SNAPSHOT</version>
+    <version>4.0.8-SNAPSHOT</version>
     <description>Metro Web Services Stack Dependency POM</description>
 
     <url>https://eclipse-ee4j.github.io/metro-wsit</url>
@@ -56,7 +56,7 @@
     <properties>
         <angus-activation.version>2.0.3</angus-activation.version>
         <angus-mail.version>2.0.5</angus-mail.version>
-        <jaxws.ri.version>4.0.4</jaxws.ri.version>
+        <jaxws.ri.version>4.0.5</jaxws.ri.version>
         <gmbal.version>4.1.2</gmbal.version>
     </properties>
 
